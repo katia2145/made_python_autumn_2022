@@ -2,7 +2,6 @@ import math
 
 eps = 1e-10
 
-
 def close_to_zero(lst):
     if not (isinstance(lst, list) or isinstance(lst, tuple)):
         return None
@@ -68,7 +67,7 @@ lst2 = [1, 2, 3, 4]
 res = merge(lst1, lst2)
 assert res == [1, 2, 3, 4]
 
-lst1 = [1.3, 2.3, 3.3, 4.3]
-lst2 = [1.3, 2.3, 3.3, 4.3]
+lst1 = [1.3, 2.3, 3.3, 3.3, 4.3]
+lst2 = [1.3, 2.3, 3.3, 3.3, 4.3]
 res = merge(lst1, lst2)
 assert res == [1.3, 2.3, 3.3, 4.3]
