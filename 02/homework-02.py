@@ -67,8 +67,8 @@ lst2 = [1, 2, 3, 4]
 answer = merge(lst1, lst2)
 assert answer == [1, 2, 3, 4]
 
-lst1 = [1.3, 2.3, 3.3, 3.3, 4.3]
-lst2 = [1.3, 2.3, 3.3, 3.3, 4.3]
+lst1 = [1.3, 2.3, 3.3, 4.3]
+lst2 = [1.3, 2.3, 3.3, 4.3]
 answer = merge(lst1, lst2)
 correct_answer = [1.3, 2.3, 3.3, 4.3]
 check_answer(correct_answer, answer)
