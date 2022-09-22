@@ -54,20 +54,21 @@ check_answer(correct_answer, answer)
 
 lst = [1, 1, 2, 5, 7]
 tp = (1, 1, 2, 3, 4, 7)
-res = merge(lst, tp)
-assert res == [1, 2, 7]
+answer = merge(lst, tp)
+assert answer == [1, 2, 7]
 
 lst = [1, 2, 3, 4]
 tp = (6, 7, 8)
-res = merge(lst, tp)
-assert res == []
+answer = merge(lst, tp)
+assert answer == []
 
 lst1 = [1, 2, 3, 4]
 lst2 = [1, 2, 3, 4]
-res = merge(lst1, lst2)
-assert res == [1, 2, 3, 4]
+answer = merge(lst1, lst2)
+assert answer == [1, 2, 3, 4]
 
 lst1 = [1.3, 2.3, 3.3, 3.3, 4.3]
 lst2 = [1.3, 2.3, 3.3, 3.3, 4.3]
-res = merge(lst1, lst2)
-assert res == [1.3, 2.3, 3.3, 4.3]
+answer = merge(lst1, lst2)
+correct_answer = [1.3, 2.3, 3.3, 4.3]
+check_answer(correct_answer, answer)
