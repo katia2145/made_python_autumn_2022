@@ -1,5 +1,6 @@
 import json
 import time
+import math
 from functools import wraps
 
 statictics = {}
@@ -12,18 +13,23 @@ def get_mean(lst):
     
     return cum_sum / len(lst)
 
+
 def timer(k):
     def _timer(func):
-        print("timer")
         @wraps(func)
         def wrapper(*args, **kwargs):
+
             start_timer = time.time()
+
             res = func(*args, **kwargs)
+            
             end_timer = time.time()
+            
             work_time.append(end_timer - start_timer)
             cnt = min(0, len(work_time) - k)
             mean_time = get_mean(work_time[cnt:])
             print(f'Mean time work of last {k} = {mean_time}')
+            
             return mean_time
         return wrapper
     return _timer
@@ -44,34 +50,28 @@ def calculate_statistics(word):
         statictics[word] += 1
     else:
         statictics[word] = 1
-    time.sleep(0.5)
+    # time.sleep(0.5)
 
 
 json_str = '{"key1": "word1 word2", "key2": "word2 word3"}'
-parse_json(json_str, calculate_statistics, required_fields=["key1"], keywords=["word1"])
+assert math.isclose(parse_json(json_str, calculate_statistics, required_fields=["key1"], keywords=["word1"]), 0)
 
 json_str = '{"key1": "Word1 word2 word2 word2 word2", "key2": "word2 word3"}'
-parse_json(json_str, calculate_statistics, required_fields=["key1"], keywords=["word2"])
+assert math.isclose(parse_json(json_str, calculate_statistics, required_fields=["key1"], keywords=["word2"]), 0)
 
-# json_str = '\'{'
-# required_fields = []
-# keywords = []
+json_str = '''{"key0": "word0 word1 word2 word3 word4", 
+                "key1": "word0 word1 word2 word3 word4", 
+                "key2": "word0 word1 word2 word3 word4", 
+                "key3": "word0 word1 word2 word3 word4", 
+                "key4": "word0 word1 word2 word3 word4"}'''
 
-# for key_number in range(5):
-#         required_fields.append('key' + str(key_number))
-#         json_str += '"key' + str(key_number) + '": "'
-#         for word_number in range(5):
-#             if key_number == 0:
-#                 keywords.append('word' + str(word_number))
-#             json_str += 'word' + str(word_number)
-#             json_str += (' ' if word_number != 4 else '')   
+required_fields=['key1', 'key2', 'key3', 'key4']
+keywords=['word1', 'word2', 'word3', 'word4']
 
-#         json_str += ('", ' if key_number != 4 else '"')
+assert math.isclose(parse_json(json_str, calculate_statistics, required_fields, keywords), 0)
 
-# json_str += '}\''
-# print(required_fields)
-# print(keywords)
-# print(json_str)
+required_fields = ['key1', 'key2', 'key3', 'key4']
+keywords = ['word1', 'word2', 'word3', 'word4']
 
-for test_number in range(50):
-    parse_json(json_str, calculate_statistics, required_fields = ["key1"], keywords = ["word1"])
+for test_number in range(20):
+    assert math.isclose(parse_json(json_str, calculate_statistics, required_fields, keywords), 0)
