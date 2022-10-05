@@ -3,26 +3,26 @@ from CustomList import CustomList
 # проверка сложения, вычитания CustomList с CustomList
 l1 = CustomList([1, 2, 3])
 l2 = CustomList([2, 3, 4])
-assert (l1 + l2) == CustomList([3, 5, 7])
-assert (l1 - l2) == CustomList([-1, -1, -1])
+assert (l1 + l2) == [3, 5, 7]
+assert (l1 - l2) == [-1, -1, -1]
 
 l1 = CustomList([1, 2, 3, 4, 5])
 l2 = CustomList([2, 3, 4])
-assert (l1 + l2) == CustomList([3, 5, 7, 4, 5])
-assert l1 == CustomList([1, 2, 3, 4, 5])
-assert l2 == CustomList([2, 3, 4])
+assert (l1 + l2) == [3, 5, 7, 4, 5]
+assert l1 == [1, 2, 3, 4, 5]
+assert l2 == [2, 3, 4]
 
-assert (l2 + l1) == CustomList([3, 5, 7, 4, 5])
-assert l1 == CustomList([1, 2, 3, 4, 5])
-assert l2 == CustomList([2, 3, 4])
+assert (l2 + l1) == [3, 5, 7, 4, 5]
+assert l1 == [1, 2, 3, 4, 5]
+assert l2 == [2, 3, 4]
 
-assert (l1 - l2) == CustomList([-1, -1, -1, 4, 5])
-assert l1 == CustomList([1, 2, 3, 4, 5])
-assert l2 == CustomList([2, 3, 4])
+assert (l1 - l2) == [-1, -1, -1, 4, 5]
+assert l1 == [1, 2, 3, 4, 5]
+assert l2 == [2, 3, 4]
 
-assert (l2 - l1) == CustomList([1, 1, 1, -4, -5])
-assert l1 == CustomList([1, 2, 3, 4, 5])
-assert l2 == CustomList([2, 3, 4])
+assert (l2 - l1) == [1, 1, 1, -4, -5]
+assert l1 == [1, 2, 3, 4, 5]
+assert l2 == [2, 3, 4]
 
 assert isinstance((l1 + l2), CustomList)
 assert isinstance((l1 - l2), CustomList)
@@ -30,27 +30,27 @@ assert isinstance((l1 - l2), CustomList)
 # проверка сложения, вычитания CustomList с list
 l1 = CustomList([1, 2, 3])
 l2 = [2, 3, 4]
-assert (l1 + l2) == CustomList([3, 5, 7])
-assert (l2 + l1) == CustomList([3, 5, 7])
-assert (l1 - l2) == CustomList([-1, -1, -1])
-assert (l2 - l1) == CustomList([1, 1, 1])
+assert (l1 + l2) == [3, 5, 7]
+assert (l2 + l1) == [3, 5, 7]
+assert (l1 - l2) == [-1, -1, -1]
+assert (l2 - l1) == [1, 1, 1]
 
 l1 = CustomList([1, 2, 3, 4, 5])
 l2 = [2, 3, 4]
-assert (l1 + l2) == CustomList([3, 5, 7, 4, 5])
-assert l1 == CustomList([1, 2, 3, 4, 5])
+assert (l1 + l2) == [3, 5, 7, 4, 5]
+assert l1 == [1, 2, 3, 4, 5]
 assert l2 == [2, 3, 4]
 
-assert (l2 + l1) == CustomList([3, 5, 7, 4, 5])
-assert l1 == CustomList([1, 2, 3, 4, 5])
+assert (l2 + l1) == [3, 5, 7, 4, 5]
+assert l1 == [1, 2, 3, 4, 5]
 assert l2 == [2, 3, 4]
 
-assert (l1 - l2) == CustomList([-1, -1, -1, 4, 5])
-assert l1 == CustomList([1, 2, 3, 4, 5])
+assert (l1 - l2) == [-1, -1, -1, 4, 5]
+assert l1 == [1, 2, 3, 4, 5]
 assert l2 == [2, 3, 4]
 
-assert (l2 - l1) == CustomList([1, 1, 1, -4, -5])
-assert l1 == CustomList([1, 2, 3, 4, 5])
+assert (l2 - l1) == [1, 1, 1, -4, -5]
+assert l1 == [1, 2, 3, 4, 5]
 assert l2 == [2, 3, 4]
 
 assert isinstance((l1 + l2), CustomList)
@@ -135,4 +135,4 @@ l1 = CustomList([1, 2, 3])
 l2 = CustomList([3, 2, 1])
 assert (l2 != l1) is False
 
-assert str(l1) == "CustomList = [1, 2, 3]\nsum = 6"
+assert str(l1) == "CustomList([1, 2, 3])\nsum=6"
