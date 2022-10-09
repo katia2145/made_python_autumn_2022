@@ -218,15 +218,6 @@ class TestTicTacGame(unittest.TestCase):
             [".", ".", "."]]).tolist()
         self.assertEqual(game.board.tolist(), true_board)
 
-    # def stub_stdin(self, testcase_inst, inputs):
-    #     stdin = sys.stdin
-
-    #     def cleanup():
-    #         sys.stdin = stdin
-
-    #     testcase_inst.addCleanup(cleanup)
-    #     sys.stdin = StringIO(inputs)
-
     def stub_stdouts(self, testcase_inst):
         stdout = sys.stdout
 
