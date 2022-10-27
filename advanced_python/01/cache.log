@@ -1,0 +1,15 @@
+2022-10-27 18:47:04,820	ERROR	LRUCache limit < 0
+2022-10-27 18:47:04,820	INFO	Inicialized LRUCache with limit size=2
+2022-10-27 18:47:04,820	DEBUG	Cache size=0 limit=2
+2022-10-27 18:47:04,820	INFO	for key k1 set value val1
+2022-10-27 18:47:04,821	INFO	for key k1 set priority 1
+2022-10-27 18:47:04,821	DEBUG	Cache size=1 limit=2
+2022-10-27 18:47:04,821	INFO	for key k2 set value val2
+2022-10-27 18:47:04,821	INFO	for key k2 set priority 2
+2022-10-27 18:47:04,821	WARNING	LRUCache don't exist key k3
+2022-10-27 18:47:04,821	INFO	for key k2 set priority 3
+2022-10-27 18:47:04,821	INFO	for key k1 set priority 4
+2022-10-27 18:47:04,821	DEBUG	Cache size=2 limit=2
+2022-10-27 18:47:04,821	WARNING	key k1 was added in LRUCache befor
+2022-10-27 18:47:04,821	INFO	for key k1 set priority 5
+2022-10-27 18:47:04,821	INFO	for key k1 change value val1 --> val3
